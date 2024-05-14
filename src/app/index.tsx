@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, Image } from "react-native"
-
-import { Button } from "@/components/button"
+import { Link } from "expo-router"
 
 export default function Home() {
      return (
@@ -24,9 +23,39 @@ export default function Home() {
                </View>
 
                <View style={styleSheet.actions}>
-                    <Button title="Enviar uma foto da pessoa" />
-                    <Button title="Informar as características" />
-               </View> 
+                    <Link href="/upload" style={{
+                         width: "100%",
+                         height: 56,
+                         backgroundColor: "#00A0FF",
+                         alignItems: "center",
+                         justifyContent: "center",
+                         borderRadius: 10,
+                         textAlign: "center",
+                         verticalAlign: "middle",
+                         color: "white",
+                         fontSize: 15,
+                         fontWeight: "bold"
+                    }}
+                    >
+                         Enviar uma foto da pessoa
+                    </Link>
+                    <Link href="/upload" style={{
+                         width: "100%",
+                         height: 56,
+                         backgroundColor: "#00A0FF",
+                         alignItems: "center",
+                         justifyContent: "center",
+                         borderRadius: 10,
+                         textAlign: "center",
+                         verticalAlign: "middle",
+                         color: "white",
+                         fontSize: 15,
+                         fontWeight: "bold"
+                    }}
+                    >
+                         Informar as características
+                    </Link>
+               </View>
           </View>
      )
 }
@@ -47,9 +76,9 @@ const styleSheet = StyleSheet.create({
           fontWeight: "bold"
      },
      actions: {
-         width: "95%",
-         gap: 20
-     }
+          width: "95%",
+          gap: 20
+     },
 })
 
 /*
