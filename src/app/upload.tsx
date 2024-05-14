@@ -7,7 +7,7 @@ export default function Upload() {
           <>
                <StatusBar barStyle={"dark-content"} />
                <View style={styleSheet.container}>
-                    <View className="bg-rose-500" style={{
+                    <View style={{
                          width: "100%",
                          alignItems: "flex-end",
                          marginRight: 80
