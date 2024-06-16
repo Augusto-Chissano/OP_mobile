@@ -1,10 +1,29 @@
 import { View, Text, StyleSheet, Image, StatusBar } from "react-native"
+import { useEffect, useState } from "react"
 import { Link } from "expo-router"
 
 export default function Home() {
+
+     const [dados, setDados] = useState(null)
+
+     const fetchData = async () => {
+          try {
+               const response = await fetch('http://192.168.43.8:3000/api')
+               const data = await response.json()
+
+               setDados(data)
+          } catch (error) {
+               console.error('Error fetching data', error)
+          }
+     }
+
+     useEffect(() => {
+          fetchData()
+     }, [])
+
      return (
           <>
-               <StatusBar barStyle={"dark-content"}/>
+               <StatusBar barStyle={"dark-content"} />
                <View style={styleSheet.container}>
                     <Image
                          source={require("@/assets/logo.png")}
@@ -27,7 +46,7 @@ export default function Home() {
                     <View style={styleSheet.actions}>
                          <Link href="/upload" style={{
                               width: "100%",
-                              height: 56,
+                              height: 45,
                               backgroundColor: "#00A0FF",
                               alignItems: "center",
                               justifyContent: "center",
@@ -43,7 +62,7 @@ export default function Home() {
                          </Link>
                          <Link href="/search" style={{
                               width: "100%",
-                              height: 56,
+                              height: 45,
                               backgroundColor: "#00A0FF",
                               alignItems: "center",
                               justifyContent: "center",

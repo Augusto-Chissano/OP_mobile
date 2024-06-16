@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet, Image, StatusBar, TouchableOpacity } from "react-native"
+import { View, Text, StyleSheet, StatusBar, TouchableOpacity } from "react-native"
 import { Link } from "expo-router"
 import { AntDesign } from "@expo/vector-icons"
 
 export default function Upload() {
      return (
           <>
-               <StatusBar barStyle={"dark-content"} />
+               <StatusBar barStyle={"dark-content"} hidden />
                <View style={styleSheet.container}>
                     <View style={{
                          width: "100%",
@@ -47,7 +47,7 @@ export default function Upload() {
 
 const styleSheet = StyleSheet.create({
      container: {
-          marginTop: 70,
+          marginTop: 30,
           backgroundColor: "#fff",
           display: "flex",
           flex: 1,
@@ -74,7 +74,7 @@ const styleSheet = StyleSheet.create({
           justifyContent: 'center',
           alignItems: 'center',
           marginHorizontal: 10,
-          marginBottom:15
+          marginBottom: 15
      },
      labels: {
           textAlign: "center",
